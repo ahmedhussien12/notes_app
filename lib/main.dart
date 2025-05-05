@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'views/home_view.dart';
+import 'views/notes_view.dart';
 
 void main() {
   runApp(const NotesApp());
@@ -21,9 +21,9 @@ class NotesApp extends StatelessWidget {
         fontFamily: 'Poppins',
       ),
       routes: {
-        HomeView.id: (context) => const HomeView(),
+        NotesView.id: (context) => const NotesView(),
       },
-      initialRoute: HomeView.id,
+      initialRoute: NotesView.id,
     );
   }
 }

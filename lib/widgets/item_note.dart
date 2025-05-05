@@ -25,7 +25,7 @@ class ItemNote extends StatelessWidget {
               style: TextStyle(color: Colors.black, fontSize: 26),
             ),
             subtitle: Padding(
-              padding: const EdgeInsets.only(top: 16,bottom: 16),
+              padding: const EdgeInsets.only(top: 16, bottom: 16),
               child: Text(
                 'Make a note about something',
                 style: TextStyle(
