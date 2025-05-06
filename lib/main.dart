@@ -5,11 +5,10 @@ import 'package:note_app/constants/constants.dart';
 import 'package:note_app/model/note_model.dart';
 import 'package:note_app/views/edit_note_view.dart';
 
-import 'add_note_cubit/add_note_cubit.dart';
 import 'simple_bloc_observer.dart';
 import 'views/notes_view.dart';
 
-void main() async{
+void main() async {
   await Hive.initFlutter();
   Bloc.observer = SimpleBlocObserver();
   Hive.registerAdapter(NoteModelAdapter());
