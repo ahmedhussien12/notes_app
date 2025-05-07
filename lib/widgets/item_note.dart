@@ -14,7 +14,7 @@ class ItemNote extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, 'EditNoteView');
+        Navigator.pushNamed(context, 'EditNoteView', arguments: note);
       },
       child: Container(
         padding: const EdgeInsets.only(
@@ -37,7 +37,7 @@ class ItemNote extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 16, bottom: 16),
                 child: Text(
-                  note.subtitle,
+                  note.content,
                   style: TextStyle(
                     color: Colors.black.withOpacity(0.5),
                     fontSize: 18,
