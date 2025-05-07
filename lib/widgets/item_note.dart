@@ -4,7 +4,9 @@ import 'package:note_app/model/note_model.dart';
 
 class ItemNote extends StatelessWidget {
   const ItemNote({super.key, required this.note});
-final NoteModel note;
+
+  final NoteModel note;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -25,9 +27,9 @@ final NoteModel note;
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title:  Text(
+              title: Text(
                 note.title,
-                style:const TextStyle(color: Colors.black, fontSize: 26),
+                style: const TextStyle(color: Colors.black, fontSize: 26),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 16, bottom: 16),
@@ -40,7 +42,9 @@ final NoteModel note;
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                },
                 icon: const Icon(
                   FontAwesomeIcons.trash,
                   color: Colors.black,
