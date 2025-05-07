@@ -14,7 +14,12 @@ class SearchResultsList extends StatelessWidget {
         if (state is ReadNotesSuccess) {
           final notes = state.notes;
           if (notes.isEmpty) {
-            return const Center(child: Text('No results found.'));
+            return const Center(
+              child: Text(
+                'No results found.',
+                style: TextStyle(fontSize: 20, color: Colors.orange),
+              ),
+            );
           }
           return ListView.builder(
             itemCount: notes.length,
