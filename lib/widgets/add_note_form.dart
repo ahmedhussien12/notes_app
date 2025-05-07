@@ -19,7 +19,7 @@ class AddNoteForm extends StatefulWidget {
 class _AddNoteFormState extends State<AddNoteForm> {
   final GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
-  String? title, subtitle;
+  String? title, content;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hint: 'content',
             maxLines: 5,
             onSaved: (value) {
-              subtitle = value!;
+              content = value!;
             },
           ),
           const SizedBox(height: 32),
@@ -55,7 +55,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                         DateFormat('dd-MM-yyyy').format(currentDate);
                     var noteModel = NoteModel(
                         title: title!,
-                        content: subtitle!,
+                        content: content!,
                         date: formattedDate,
                         //'${DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}',
                         color: Colors.orange.value);

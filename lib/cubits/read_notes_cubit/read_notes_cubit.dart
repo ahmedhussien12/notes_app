@@ -17,4 +17,12 @@ class ReadNotesCubit extends Cubit<ReadNotesState> {
     notes = notesBox.values.toList(); // List<NoteModel>
     emit(ReadNotesSuccess());
   }
+
+  void searchNotes(String query) {
+    final filteredNotes = notes?.where((note) {
+      return note.title.toLowerCase().contains(query.toLowerCase()) ||
+          note.content.toLowerCase().contains(query.toLowerCase());
+    }).toList();
+    emit(ReadNotesSuccess(filteredNotes!));
+  }
 }

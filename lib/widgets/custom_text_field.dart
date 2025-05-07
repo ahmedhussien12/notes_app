@@ -2,12 +2,18 @@ import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField(
-      {super.key, required this.hint, this.maxLines = 1, this.onSaved, this.onChanged});
+      {super.key,
+      required this.hint,
+      this.maxLines = 1,
+      this.onSaved,
+      this.onChanged,
+      this.prefixIcon});
 
   final String hint;
   final int maxLines;
   final void Function(String?)? onSaved;
   final void Function(String)? onChanged;
+  final IconData? prefixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +30,7 @@ class CustomTextFormField extends StatelessWidget {
       cursorColor: Colors.orange,
       maxLines: maxLines,
       decoration: InputDecoration(
+        prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
         hintText: hint,
         hintStyle: const TextStyle(
           color: Colors.orange,
