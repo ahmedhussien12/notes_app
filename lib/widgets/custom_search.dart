@@ -19,7 +19,7 @@ class CustomSearch extends StatelessWidget {
         icon: Icon(
           icon,
           size: 28,
-          color: Colors.white,
+          color: Colors.orange,
         ),
       ),
     );

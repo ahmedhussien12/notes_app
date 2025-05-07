@@ -9,14 +9,12 @@ part 'read_notes_state.dart';
 
 class ReadNotesCubit extends Cubit<ReadNotesState> {
   ReadNotesCubit() : super(ReadNotesInitial());
-List<NoteModel>? notes;
+  List<NoteModel>? notes;
+
   fetchAllNotes() {
     var notesBox = Hive.box<NoteModel>(kNotesBox);
 
-       notes = notesBox.values.toList(); // List<NoteModel>
-      //emit(ReadNotesSuccess(notes!));
-
-
-
+    notes = notesBox.values.toList(); // List<NoteModel>
+    emit(ReadNotesSuccess());
   }
 }
