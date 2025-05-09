@@ -31,6 +31,12 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
                 widget.note.title = title ?? widget.note.title;
                 widget.note.content = content ?? widget.note.content;
                 widget.note.save();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Note Updated'),
+                    backgroundColor: Colors.orange,
+                  ),
+                );
                 Navigator.pop(context);
                 BlocProvider.of<ReadNotesCubit>(context).fetchAllNotes();
               },
@@ -52,12 +58,13 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
                 content = value;
               },
             ),
-          const  SizedBox(height: 16),
-             EditColorsListView(note: widget.note,),
+            const SizedBox(height: 16),
+            EditColorsListView(
+              note: widget.note,
+            ),
           ],
         ),
       ),
     );
   }
 }
-
